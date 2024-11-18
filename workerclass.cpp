@@ -3,7 +3,16 @@
 WorkerClass::WorkerClass(QObject *parent)
     : QThread{parent}
 {
-    if (!openPort("/dev/ttyUSB0")) { qDebug() << "Failed to open port"; }
+
+    QString port = "/dev/ttyUSB0";
+    if (!openPort(port))
+    {
+        QString msg = QString("Failed to open port: %1").arg(port);
+        qDebug() << msg;
+        // QMessageBox mbox;
+        // mbox.setText(msg);
+        // mbox.exec();
+    }
 
     connect(_port, &QSerialPort::readyRead, this, &WorkerClass::readData);
 

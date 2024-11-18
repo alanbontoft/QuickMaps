@@ -4,7 +4,7 @@ project(QuickMaps VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 6.4 REQUIRED COMPONENTS Quick SerialPort)
+find_package(Qt6 6.4 REQUIRED COMPONENTS Quick SerialPort Widgets)
 
 qt_standard_project_setup()
 
@@ -34,7 +34,7 @@ set_target_properties(appQuickMaps PROPERTIES
 )
 
 target_link_libraries(appQuickMaps
-    PRIVATE Qt6::Quick Qt6::SerialPort
+    PRIVATE Qt6::Quick Qt6::SerialPort Qt6::Widgets
 )
 
 include(GNUInstallDirs)

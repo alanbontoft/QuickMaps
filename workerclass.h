@@ -5,7 +5,7 @@
 #include <QDebug>
 #include <QtSerialPort/QSerialPort>
 #include <QMutex>
-#include <QElapsedTimer>
+#include <QMessageBox>
 
 class WorkerClass : public QThread
 {
